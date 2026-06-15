@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #ffad31;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  font-family: 'Press Start 2P', monospace;
+  background-image:
+    radial-gradient(circle at 20% 30%, #f7bc3d 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, #b1b1b1 0%, transparent 50%);
+}
+
+.card-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  padding: 2vmin;
+}
+
+.card {
+  flex: 1;
+  border-radius: 2vmin;
+  padding: 1.5vmin;
+  position: relative;
+  box-shadow:
+    0 0 0 0.4vmin #fff,
+    0 0 0 0.8vmin #d17e1e,
+    0 0 0 1.2vmin #fff,
+    0 1vmin 4vmin rgba(0,0,0,0.5);
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-0.6vmin); }
+}
+
+.card-inner {
+  height: 100%;
+  
+  border-radius: 1.2vmin;
+  border: 0.4vmin solid #fff7e3;
+  padding: 2vmin 2.5vmin;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vmin;
+}
+
+/* shimmer */
+  .card-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+    background-size: 200% 200%;
+    animation: shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 2; /* ensure shimmer sits above the background image */
+  }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+/* ── title ── */
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.5vmin;
+  flex-shrink: 0;
+}
+
+.title-emblem {
+  width: 2.8vmin; height: 2.8vmin;
+  background: #e8c840;
+  border-radius: 50%;
+  border: 0.3vmin solid #b89820;
+  box-shadow: 0 0 1vmin #e8c840aa;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.title-emblem::after {
+  content: '';
+  width: 1.2vmin; height: 1.2vmin;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.title-text {
+  font-size: clamp(10px, 2vmin, 28px);
+  color: #1a4060;
+  letter-spacing: 0.2vmin;
+  text-shadow: 0.1vmin 0.1vmin 0 rgba(255,255,255,0.5);
+}
+
+.star {
+  position: absolute;
+  top: 2vmin; right: 2.5vmin;
+  font-size: clamp(14px, 3.5vmin, 48px);
+  color: #e8c840;
+  text-shadow: 0 0 1.5vmin #e8c840;
+  animation: starPulse 2s ease-in-out infinite;
+}
+@keyframes starPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(0.9); }
+}
+
+/* ── main body ── */
+.card-body {
+  display: flex;
+  gap: 3vmin;
+  flex: 1;
+  min-height: 0;
+}
+
+.card-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.5vmin; }
+
+.two-cols {
+  display: flex;
+  gap: 1.5vmin;
+}
+.two-cols .field { flex: 1; }
+
+.field-label {
+  font-size: clamp(7px, 1.2vmin, 16px);
+  color: #6d6962;
+  opacity: 0.85;
+  letter-spacing: 0.1vmin;
+}
+
+.field-value {
+  font-size: clamp(9px, 1.6vmin, 22px);
+  color: #0d2a40;
+  background: rgba(255,255,255,0.45);
+  border: 0.2vmin solid #ffed4c;
+  border-radius: 0.5vmin;
+  padding: 1vmin 2vmin;
+}
+
+/* ── sprite ── */
+.sprite-panel {
+  width: 44vmin;
+  
+  height: 38vmin;
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.sprite-box {
+  flex: 1;
+  background: rgba(255,255,255,0.35);
+  border: 0.3vmin solid #ffed4c;
+  border-radius: 1vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sprite-box svg {
+  width: 75%;
+  height: 90%;
+  image-rendering: pixelated;
+}
+
+/* ── divider ── */
+.divider {
+  height: 0.3vmin;
+  background: linear-gradient(90deg, transparent, #ffdb3c, transparent);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* ── bottom fields ── */
+.bottom-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+  flex-shrink: 0;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vmin;
+}
+
+.field-row .field-label { font-size: clamp(7px, 1.2vmin, 16px); color: #60441a; white-space: nowrap; }
+.field-row .field-value { font-size: clamp(8px, 1.4vmin, 18px); text-align: right; }
+
+/* ── badges ── */
+.badge-strip {
+  display: flex;
+  gap: 1.5vmin;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.badge-col { display: flex; flex-direction: column; align-items: center; gap: 0.4vmin; }
+
+.badge {
+  width: 4vmin; height: 4vmin;
+  border-radius: 50%;
+  border: 0.3vmin solid rgba(255,255,255,0.6);
+  box-shadow: 0 0.2vmin 0.8vmin rgba(0,0,0,0.25);
+}
+
+.badge-1 { background: radial-gradient(circle at 35% 35%, #c8c8c8, #888); }
+.badge-2 { background: radial-gradient(circle at 35% 35%, #ffe080, #c89020); }
+.badge-3 { background: radial-gradient(circle at 35% 35%, #80d8ff, #2090c0); }
+.badge-4 { background: radial-gradient(circle at 35% 35%, #ffb060, #c04000); }
+.badge-5 { background: radial-gradient(circle at 35% 35%, #c8ffa0, #40a000); }
+.badge-6 { background: radial-gradient(circle at 35% 35%, #ffd0f0, #c04080); }
+.badge-7 { background: radial-gradient(circle at 35% 35%, #d8b0ff, #6020c0); }
+.badge-8 { background: radial-gradient(circle at 35% 35%, #60e8ff, #0060c0); }
+
+.badge-label {
+  font-size: clamp(5px, 0.9vmin, 12px);
+  color: #60501a;
+  text-align: center;
+}
+
+.fullpage-img {
+  /* make the image act as a card background */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* ensure card content (and the shimmer) sits above the background image */
+.card-inner > :not(.fullpage-img) {
+  position: relative;
+  z-index: 1;
+}
+.title-bar {
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+}
+.title-bar h1 {
+    font-size: 7vh;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+}
+
+#pokeball-img{
+    height: 10vh;
+    width: 10vh;
+}
+
+p{
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
