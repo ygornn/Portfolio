@@ -1,112 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trainer Card</title>
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer Card</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section>
-    <div class=""></div>
-  </section>
-    <section></section>
-    <footer></footer>
-    
-    <div class="card-wrapper">
-      <div class="card">
-        
+
+  <!-- Botão de virar o card -->
+  <button class="flip-btn" id="flipBtn">🔄 Virar Card</button>
+
+  <div class="card-wrapper">
+    <div class="card" id="card">
+
+      <!-- ═══ FRENTE ═══ -->
+      <div class="card-face card-front">
         <div class="card-inner">
           <img class="fullpage-img" src="imagens/background (3).png" alt="background image">
-          
+
           <div class="star">★</div>
-          
-          <!-- Title -->
+
           <header class="title-bar">
-              <img id="pokeball-img" src="imagens/pokeball.png" alt="pokeball image">
-              <h1>PORTFÓLIO</h1>
-              <img  id="pokeball-img" src="imagens/pokeball.png" alt="pokeball image">
+            <img id="pokeball-img" src="imagens/pokeball.png" alt="pokeball image">
+            <h1>PORTFÓLIO</h1>
+            <img id="pokeball-img" src="imagens/pokeball.png" alt="pokeball image">
           </header>
 
+          <!-- Main body -->
+          <div class="card-body">
 
-      <!-- Main body -->
-      <div class="card-body">
-        <div class="card-fields">
-          <div class="field"><div class="field-label">NOME</div><div class="field-value">YGOR NATHAN NOLLI</div></div>
-          <section class="field">
-            <div class="field-label">SOBRE MIM</div>
-            <div class="field-value">
-              <p>Estudante de Ciência da Computação da PUCPR interessado pelos fundamentos da tecnologia da informação</p>
-              <p>Formado em curso técnico integrado ao Ensino Médio de Informática para a Internet pelo Instituto Federal Catarinense (IFC)</p>
-              <p>Sou originário de uma cidade no interior de Santa Catarina (Rio do Oeste). Me mudei recentemente para Curitiba</p>
+            <!-- COLUNA ESQUERDA -->
+            <div class="card-fields">
+              <div class="field">
+                <div class="field-label">NOME</div>
+                <div class="field-value">YGOR NATHAN NOLLI</div>
+              </div>
+
+              <div class="field">
+                <div class="field-label">SOBRE MIM</div>
+                <div class="field-value">
+                  <p>Estudante de Ciência da Computação da PUCPR interessado pelos fundamentos da tecnologia da informação</p>
+                  <p>Formado em curso técnico integrado ao Ensino Médio de Informática para a Internet pelo Instituto Federal Catarinense (IFC)</p>
+                </div>
+              </div>
+
+              <!-- PROJETOS -->
+              <div class="field">
+                <div class="field-label">PROJETOS</div>
+                <div class="projects-grid">
+
+                  <div class="project-card">
+                    <div class="project-img-placeholder proj-1-bg"></div>
+                    <div class="project-info">
+                      <div class="project-name">O Artefato Perdido</div>
+                      <div class="project-desc">Jogo plataforma feito com Construct3</div>
+                      <span class="project-status status-done">✔ Concluído</span>
+                      <a href="projects/JOGOFINAL.zip" download="JOGOFINAL.zip">
+                        <span class="download-hint">⬇ baixar projeto</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-img-placeholder proj-2-bg"></div>
+                    <div class="project-info">
+                      <div class="project-name">Hobbies</div>
+                      <div class="project-desc">Aplicativo multiplataforma para sugestão de hobbies para viciados em celular. Feito com Processing.</div>
+                      <span class="project-status status-done">✔ Concluído</span>
+                      <a href="projects/APP MM COM IA.zip" download="APP MM COM IA.zip">
+                        <span class="download-hint">⬇ baixar projeto</span>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="field">
+                <div class="field-label">HOBBIES</div>
+                <div class="badge-strip">
+                  <div class="badge-col"><div class="badge badge-1">📚</div><div class="badge-label">Leitura</div></div>
+                  <div class="badge-col"><div class="badge badge-2">🏋️</div><div class="badge-label">Academia</div></div>
+                  <div class="badge-col"><div class="badge badge-3">🎬</div><div class="badge-label">Cinema</div></div>
+                  <div class="badge-col"><div class="badge badge-4">👗</div><div class="badge-label">Moda</div></div>
+                  <div class="badge-col"><div class="badge badge-5">✏️</div><div class="badge-label">Desenho</div></div>
+                  <div class="badge-col"><div class="badge badge-6">🎨</div><div class="badge-label">Pintura</div></div>
+                  <div class="badge-col"><div class="badge badge-7">✈️</div><div class="badge-label">Viajar</div></div>
+                  <div class="badge-col"><div class="badge badge-8">💰</div><div class="badge-label">Finanças</div></div>
+                </div>
+              </div>
             </div>
-          </section>
-          <section class="field">
-            <div class="two-cols">
+
+            <!-- COLUNA DIREITA -->
+            <div class="right-col">
+              <div class="sprite-panel">
+                <div class="sprite-box">
+                  <img src="imagens/barry2.png" alt="Meu avatar">
+                </div>
+              </div>
+
               <div class="field">
                 <div class="field-label">CURIOSIDADES</div>
-                <div class="field-value">
+                <div class="field-value" id="curiosidades">
                   <ul>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Tenho 20 anos</li>
+                    <li>Sou do interior de Santa Catarina (Rio do Oeste)</li>
+                    <li>O meu tipo favorito é o fada</li>
+                    <li>Apesar da inspiração em Sinnoh, Kalos é a minha região favorita</li>
+                    <li>Fennekin é o meu inicial favorito</li>
                   </ul>
                 </div>
               </div>
+
               <div class="field">
                 <div class="field-label">DISCIPLINAS FAVORITAS</div>
                 <div class="field-value">
-                  <!-- Add favorite subjects here -->
+                  <div class="disciplina-item">
+                    <div class="disc-thumb">
+                      <img class="disc-imgs" src="imagens/ra.png" alt="RAimg">
+                    </div>
+                    <div class="disc-info">
+                      <div class="disc-title">Raciocínio algorítmico (lógica de programação)</div>
+                    </div>
+                    <div class="disc-chevron"></div>
+                  </div>
+                  <div class="disciplina-item">
+                    <div class="disc-thumb">
+                      <img class="disc-imgs" src="imagens/exp.png" alt="EXPCimg">
+                    </div>
+                    <div class="disc-info">
+                      <div class="disc-title">Experiência criativa</div>
+                    </div>
+                    <div class="disc-chevron"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
+
+          </div><!-- end card-body -->
+
           <div class="divider"></div>
-          <section class="field">
-            <div class="field-label">HOBBIES</div>
-            <div class="badge-strip">
-              <div class="badge-col"><div class="badge badge-1"></div><div class="badge-label">Coal</div></div>
-              <div class="badge-col"><div class="badge badge-2"></div><div class="badge-label">Forest</div></div>
-              <div class="badge-col"><div class="badge badge-3"></div><div class="badge-label">Cobble</div></div>
-              <div class="badge-col"><div class="badge badge-4"></div><div class="badge-label">Fen</div></div>
-              <div class="badge-col"><div class="badge badge-5"></div><div class="badge-label">Relic</div></div>
-              <div class="badge-col"><div class="badge badge-6"></div><div class="badge-label">Mine</div></div>
-              <div class="badge-col"><div class="badge badge-7"></div><div class="badge-label">Icicle</div></div>
-              <div class="badge-col"><div class="badge badge-8"></div><div class="badge-label">Beacon</div></div>
-            </div>
-        
-          </section>
-        </div>
-        <section>
-          <div class="sprite-panel">
-            <div class="sprite-box">
-              <img src="imagens/barry2.png" alt="Meu avatar">
-            </div>
-          </div>
-         
-        </div>
-        </section>
 
-      <div class="divider"></div>
+          <footer>
+            <div class="bottom-fields">
+                <p class="field-label">Ygor Nathan Nolli- 1° semestre de Ciência da Computação PUCPR</p>
+                <a class="field-value" href="https://www.linkedin.com/in/ygor-nathan-nolli-1283b5242/">Linkedin</a>
+             
+            </div>
+          </footer>
 
-      <div class="bottom-fields">
-        <div class="field-row">
-          <span class="field-label">TIME</span>
-          <span class="field-value">50:58</span>
-        </div>
-        <div class="field-row">
-          <span class="field-label">ADVENTURE STARTED</span>
-          <span class="field-value">Dec. 15, 2008</span>
-        </div>
+        </div><!-- end card-inner -->
+      </div><!-- end card-front -->
+
+      <!-- ═══ VERSO ═══ -->
+      <div class="card-face card-back">
+        <img class="fullpage-img" src="imagens/card-back.png" alt="verso do trainer card">
       </div>
 
-
-    </div>
+    </div><!-- end card -->
   </div>
-</div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
