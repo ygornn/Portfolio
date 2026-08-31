@@ -144,40 +144,24 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* ── title ── */
 .title-bar {
   display: flex;
   align-items: center;
-  padding: 2vh;
-  gap: 1.5vmin;
+  padding: 3vmin;
   flex-shrink: 0;
+  margin-bottom: 2vmin;
 }
 .title-bar h1 {
-  font-size: 7vh;
+  font-size: 5vmin;
   color: #fff;
   letter-spacing: 2px;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
 }
 #pokeball-img {
-  height: 10vh;
-  width: 10vh;
+  height: 10vmin;
+  width: 10vmin;
 }
 
-.star {
-  position: absolute;
-  top: 2vmin; right: 2.5vmin;
-  font-size: clamp(14px, 3.5vmin, 48px);
-  color: #e8c840;
-  text-shadow: 0 0 1.5vmin #e8c840;
-  animation: starPulse 2s ease-in-out infinite;
-  z-index: 3;
-}
-@keyframes starPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.7; transform: scale(0.9); }
-}
-
-/* ── main body ── */
 .card-body {
   display: flex;
   gap: 3vmin;
@@ -190,7 +174,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.2vmin;
+  gap: 3vmin;
   min-width: 0;
   overflow-y: auto;
   scrollbar-width: none;
@@ -199,7 +183,7 @@ body {
 
 /* COLUNA DIREITA */
 .right-col {
-  width: 40vmin;
+  width: 30vmin;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -209,22 +193,22 @@ body {
 }
 .right-col::-webkit-scrollbar { display: none; }
 
-.field { display: flex; flex-direction: column; gap: 0.5vmin; }
+.field { display: flex; flex-direction: column; gap: 1vmin;}
 
 .field-label {
-  font-size: clamp(7px, 1.2vmin, 16px);
+  font-size: clamp(2vmin, 1.2vmin, 16px);
   color: #6d6962;
   opacity: 0.85;
   letter-spacing: 0.1vmin;
 }
 
 .field-value {
-  font-size: clamp(9px, 1.4vmin, 20px);
+  font-size: clamp(1.5vmin, 3vmin, 20px);
   color: #0d2a40;
   background: rgba(255,255,255,0.45);
   border: 0.2vmin solid #ffed4c;
   border-radius: 0.5vmin;
-  padding: 0.8vmin 1.5vmin;
+  padding: 2vmin;
 }
 
 p {
@@ -236,7 +220,7 @@ p {
 .sprite-panel {
   flex-shrink: 0;
   display: flex;
-  height: 28vmin;
+  height: 29vmin;
 }
 
 .sprite-box {
@@ -325,25 +309,25 @@ p {
   flex-shrink: 0;
   margin-left: 2px;
 }
+ 
 
-/* ── projects ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1vmin;
-}
 
 .project-card {
-  background: rgba(255,255,255,0.5);
+
+  background: rgba(255,255,255,0.55);
   border: 0.2vmin solid #ffed4c;
   border-radius: 0.8vmin;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+  flex-direction: row;
+  gap: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+.project-card.active {
+  border-color: #e8a000;
+  box-shadow: 0 0 1.5vmin rgba(200,120,0,0.35);
 }
 .project-card:hover {
   transform: translateY(-0.3vmin);
@@ -355,7 +339,7 @@ p {
 }
 
 .download-hint {
-  font-size: clamp(1vmin, 0.65vmin, 8px);
+  font-size: clamp(2vmin, 0.65vmin, 8px);
   font-family: sans-serif;
   color: #805000;
   opacity: 0;
@@ -364,23 +348,9 @@ p {
   letter-spacing: 0.03em;
 }
 
-.project-img-placeholder {
-  width: 100%;
-  height: 16vmin;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(14px, 3vmin, 36px);
-}
+
 .proj-1-bg { background-image: url(imagens/jogoC3P.png);}
 .proj-2-bg { background-image: url(imagens/processingApp.png);}
-
-/* Ensure background images fully appear inside the placeholder */
-.project-img-placeholder {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain; /* use `cover` if you prefer filling/cropping instead */
-}
 
 
 .project-info {
@@ -473,6 +443,21 @@ p {
   flex-shrink: 0;
 }
 
+.bottom-labels{
+  font-size: clamp(1vmin, 1.2vmin, 16px);
+  color: #6d6962;
+  opacity: 0.85;
+  letter-spacing: 0.1vmin;
+}
+
+.bottom-value {
+  font-size: clamp(0.7vmin, 3vmin, 20px);
+  color: #0d2a40;
+  background: rgba(255,255,255,0.45);
+  border: 0.2vmin solid #ffed4c;
+  border-radius: 0.5vmin;
+}
+
 .field-row {
   display: flex;
   align-items: center;
@@ -494,8 +479,186 @@ p {
   border-radius: inherit;
 }
 
+.back-img{
+  object-fit: cover;
+  height: 100%; width: 100%;
+}
+
 .card-inner > :not(.fullpage-img) {
   position: relative;
   z-index: 1;
 }
 
+.projects-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vmin;
+}
+ 
+.slider-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+ 
+.slider-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+ 
+/* each card = one slide */
+.project-card {
+  min-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vmin;
+}
+ 
+/* ── TOP ROW: image + name/year ── */
+.proj-top {
+  display: flex;
+  gap: 1vmin;
+  align-items: stretch;
+}
+ 
+.proj-img-box {
+  width: 38%;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.7);
+  border: 0.35vmin solid #c8b040;
+  border-radius: 1vmin;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(20px, 5vmin, 60px);
+}
+ 
+.proj-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.proj-meta {
+  flex: 1;
+  background: rgba(255,248,200,0.75);
+  border-radius: 1vmin;
+  padding: 0.8vmin 1vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8vmin;
+}
+ 
+.proj-name {
+  font-size: clamp(6px, 1.1vmin, 15px);
+  color: #2a1a00;
+  line-height: 1.5;
+}
+ 
+.proj-year {
+  font-size: clamp(6px, 1vmin, 13px);
+  color: #5a4010;
+}
+ 
+/* ── BOTTOM ROW: blue desc bar + arrow buttons ── */
+.proj-bottom {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: #5080d0;
+  border-radius: 1vmin;
+  overflow: hidden;
+  border: 0.3vmin solid #3060b0;
+}
+ 
+.slider-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(8px, 1.6vmin, 20px);
+  background: #2050a8;
+  border: none;
+  color: #ffffff;
+  padding: 0 1.2vmin;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5vmin;
+}
+.slider-btn:hover   { background: #1840a0; }
+.slider-btn:active  { background: #102880; }
+.slider-btn:disabled { opacity: 0.35; cursor: default; }
+ 
+.proj-desc-wrap {
+  flex: 1;
+  background: rgba(255,255,255,0.92);
+  padding: 0.8vmin 1.2vmin;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vmin;
+  justify-content: center;
+}
+ 
+.proj-desc {
+  font-size: clamp(5px, 0.9vmin, 12px);
+  color: #0d2a40;
+  line-height: 1.7;
+  font-family: sans-serif;
+}
+ 
+.proj-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.8vmin;
+  flex-wrap: wrap;
+}
+ 
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(4px, 0.7vmin, 9px);
+  padding: 0.2vmin 0.6vmin;
+  border-radius: 2vmin;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.status-done     { background: #b8f0b8; color: #206020; border: 0.15vmin solid #60c060; }
+.status-progress { background: #ffe8a0; color: #806000; border: 0.15vmin solid #c0a000; }
+.status-planned  { background: #d8d8ff; color: #303080; border: 0.15vmin solid #8080d0; }
+ 
+.download-hint {
+  display: inline-block;
+  font-size: clamp(4px, 0.7vmin, 9px);
+  font-family: sans-serif;
+  color: #2050b0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+ 
+/* dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8vmin;
+  margin-top: 0.3vmin;
+}
+.slider-dot {
+  width: 1vmin; height: 1vmin;
+  border-radius: 50%;
+  background: rgba(150,100,0,0.3);
+  border: 0.15vmin solid #c07800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.slider-dot.active {
+  background: #c07800;
+  transform: scale(1.3);
+}

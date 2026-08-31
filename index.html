@@ -9,7 +9,7 @@
 <body>
 
   <!-- Botão de virar o card -->
-  <button class="flip-btn" id="flipBtn">🔄 Virar Card</button>
+  <button class="flip-btn" id="flipBtn">🔄 Ver insígnias</button>
 
   <div class="card-wrapper">
     <div class="card" id="card">
@@ -18,8 +18,6 @@
       <div class="card-face card-front">
         <div class="card-inner">
           <img class="fullpage-img" src="imagens/background (3).png" alt="background image">
-
-          <div class="star">★</div>
 
           <header class="title-bar">
             <img id="pokeball-img" src="imagens/pokeball.png" alt="pokeball image">
@@ -33,7 +31,7 @@
             <!-- COLUNA ESQUERDA -->
             <div class="card-fields">
               <div class="field">
-                <div class="field-label">NOME</div>
+                <div class="field-label">TREINADOR</div>
                 <div class="field-value">YGOR NATHAN NOLLI</div>
               </div>
 
@@ -41,42 +39,75 @@
                 <div class="field-label">SOBRE MIM</div>
                 <div class="field-value">
                   <p>Estudante de Ciência da Computação da PUCPR interessado pelos fundamentos da tecnologia da informação</p>
-                  <p>Formado em curso técnico integrado ao Ensino Médio de Informática para a Internet pelo Instituto Federal Catarinense (IFC)</p>
                 </div>
               </div>
 
               <!-- PROJETOS -->
-              <div class="field">
+           
+                <div class="field">
                 <div class="field-label">PROJETOS</div>
-                <div class="projects-grid">
-
-                  <div class="project-card">
-                    <div class="project-img-placeholder proj-1-bg"></div>
-                    <div class="project-info">
-                      <div class="project-name">O Artefato Perdido</div>
-                      <div class="project-desc">Jogo plataforma feito com Construct3</div>
-                      <span class="project-status status-done">✔ Concluído</span>
-                      <a href="projects/JOGOFINAL.zip" download="JOGOFINAL.zip">
-                        <span class="download-hint">⬇ baixar projeto</span>
-                      </a>
+ 
+                <div class="projects-slider">
+                  <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+ 
+                      <!-- Projeto 1 -->
+                      <div class="project-card">
+                        <div class="proj-top">
+                          <div class="proj-img-box"><img src="imagens/jogoC3P.png" alt=""></div>
+                          <div class="proj-meta">
+                            <div class="proj-name">O Artefato Perdido</div>
+                            <div class="proj-year">ANO: 2024</div>
+                          </div>
+                        </div>
+                        <div class="proj-bottom">
+                          <button class="slider-btn" id="prevBtn" disabled>&#9664;</button>
+                          <div class="proj-desc-wrap">
+                            <div class="proj-desc">Jogo plataforma feito com Construct3</div>
+                            <div class="proj-footer">
+                              <span class="project-status status-done">✔ Concluído</span>
+                              <a href="projects/JOGOFINAL.zip" download="JOGOFINAL.zip">
+                                <span class="download-hint">⬇ baixar projeto</span>
+                              </a>
+                            </div>
+                          </div>
+                          <button class="slider-btn" id="nextBtn">&#9654;</button>
+                        </div>
+                      </div>
+ 
+                      <!-- Projeto 2 -->
+                      <div class="project-card">
+                        <div class="proj-top">
+                          <div class="proj-img-box">📱</div>
+                          <div class="proj-meta">
+                            <div class="proj-name">Hobbies para viciados em celular</div>
+                            <div class="proj-year">ANO: 2024</div>
+                          </div>
+                        </div>
+                        <div class="proj-bottom">
+                          <button class="slider-btn slider-prev-2">&#9664;</button>
+                          <div class="proj-desc-wrap">
+                            <div class="proj-desc">Aplicativo multiplataforma para sugestão de hobbies. Feito com Processing.</div>
+                            <div class="proj-footer">
+                              <span class="project-status status-done">✔ Concluído</span>
+                              <a href="projects/APP MM COM IA.zip" download="APP MM COM IA.zip">
+                                <span class="download-hint">⬇ baixar projeto</span>
+                              </a>
+                            </div>
+                          </div>
+                          <button class="slider-btn slider-next-2" disabled>&#9654;</button>
+                        </div>
+                      </div>
+ 
                     </div>
                   </div>
-
-                  <div class="project-card">
-                    <div class="project-img-placeholder proj-2-bg"></div>
-                    <div class="project-info">
-                      <div class="project-name">Hobbies</div>
-                      <div class="project-desc">Aplicativo multiplataforma para sugestão de hobbies para viciados em celular. Feito com Processing.</div>
-                      <span class="project-status status-done">✔ Concluído</span>
-                      <a href="projects/APP MM COM IA.zip" download="APP MM COM IA.zip">
-                        <span class="download-hint">⬇ baixar projeto</span>
-                      </a>
-                    </div>
+ 
+                  <div class="slider-dots" id="sliderDots">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
                   </div>
-
                 </div>
               </div>
-
               <div class="divider"></div>
 
               <div class="field">
@@ -96,45 +127,51 @@
 
             <!-- COLUNA DIREITA -->
             <div class="right-col">
-              <div class="sprite-panel">
-                <div class="sprite-box">
-                  <img src="imagens/barry2.png" alt="Meu avatar">
-                </div>
-              </div>
+            <div class="card-fields">
 
               <div class="field">
-                <div class="field-label">CURIOSIDADES</div>
-                <div class="field-value" id="curiosidades">
-                  <ul>
-                    <li>Tenho 20 anos</li>
-                    <li>Sou do interior de Santa Catarina (Rio do Oeste)</li>
-                    <li>O meu tipo favorito é o fada</li>
-                    <li>Apesar da inspiração em Sinnoh, Kalos é a minha região favorita</li>
-                    <li>Fennekin é o meu inicial favorito</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="field-label">DISCIPLINAS FAVORITAS</div>
-                <div class="field-value">
-                  <div class="disciplina-item">
-                    <div class="disc-thumb">
-                      <img class="disc-imgs" src="imagens/ra.png" alt="RAimg">
+  
+                  <div class="sprite-panel">
+                    <div class="sprite-box">
+                      <img src="imagens/barry2.png" alt="Meu avatar">
                     </div>
-                    <div class="disc-info">
-                      <div class="disc-title">Raciocínio algorítmico (lógica de programação)</div>
-                    </div>
-                    <div class="disc-chevron"></div>
                   </div>
-                  <div class="disciplina-item">
-                    <div class="disc-thumb">
-                      <img class="disc-imgs" src="imagens/exp.png" alt="EXPCimg">
+              </div>
+  
+                <div class="field">
+                  <div class="field-label">CURIOSIDADES</div>
+                  <div class="field-value" id="curiosidades">
+                    <ul>
+                      <li>Tenho 20 anos</li>
+                      <li>Sou do interior de Santa Catarina (Rio do Oeste)</li>
+                      <li>O meu tipo favorito é o fada</li>
+                      <li>Apesar da inspiração em Sinnoh, Kalos é a minha região favorita</li>
+                      <li>Fennekin é o meu inicial favorito</li>
+                    </ul>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <div class="field-label">DISCIPLINAS FAVORITAS</div>
+                  <div class="field-value">
+                    <div class="disciplina-item">
+                      <div class="disc-thumb">
+                        <img class="disc-imgs" src="imagens/ra.png" alt="RAimg">
+                      </div>
+                      <div class="disc-info">
+                        <div class="disc-title">Raciocínio algorítmico (lógica de programação)</div>
+                      </div>
+                      <div class="disc-chevron"></div>
                     </div>
-                    <div class="disc-info">
-                      <div class="disc-title">Experiência criativa</div>
+                    <div class="disciplina-item">
+                      <div class="disc-thumb">
+                        <img class="disc-imgs" src="imagens/exp.png" alt="EXPCimg">
+                      </div>
+                      <div class="disc-info">
+                        <div class="disc-title">Experiência criativa</div>
+                      </div>
+                      <div class="disc-chevron"></div>
                     </div>
-                    <div class="disc-chevron"></div>
                   </div>
                 </div>
               </div>
@@ -145,10 +182,8 @@
           <div class="divider"></div>
 
           <footer>
-            <div class="bottom-fields">
-                <p class="field-label">Ygor Nathan Nolli- 1° semestre de Ciência da Computação PUCPR</p>
-                <a class="field-value" href="https://www.linkedin.com/in/ygor-nathan-nolli-1283b5242/">Linkedin</a>
-             
+            <div class="">
+                <p class="bottom-fields">Ygor Nathan Nolli. 2° semestre de Ciência da Computação- PUCPR</p>             
             </div>
           </footer>
 
@@ -157,7 +192,7 @@
 
       <!-- ═══ VERSO ═══ -->
       <div class="card-face card-back">
-        <img class="fullpage-img" src="imagens/card-back.png" alt="verso do trainer card">
+        <img class="back-img" src="imagens/tumblr_5894834d605466d88a986ba678420b93_06dda731_540.webp" alt="verso do trainer card">
       </div>
 
     </div><!-- end card -->
@@ -165,5 +200,6 @@
 
   <script src="script.js"></script>
 
+  
 </body>
 </html>
