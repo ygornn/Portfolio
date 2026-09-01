@@ -147,12 +147,12 @@ body {
 .title-bar {
   display: flex;
   align-items: center;
-  padding: 3vmin;
+ 
   flex-shrink: 0;
-  margin-bottom: 2vmin;
+  margin-bottom: 2.5vmin;
 }
 .title-bar h1 {
-  font-size: 5vmin;
+  font-size: 6vmin;
   color: #fff;
   letter-spacing: 2px;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
@@ -183,7 +183,7 @@ body {
 
 /* COLUNA DIREITA */
 .right-col {
-  width: 30vmin;
+  width: 35vmin;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -196,14 +196,14 @@ body {
 .field { display: flex; flex-direction: column; gap: 1vmin;}
 
 .field-label {
-  font-size: clamp(2vmin, 1.2vmin, 16px);
+  font-size: 2vmin;
   color: #6d6962;
   opacity: 0.85;
   letter-spacing: 0.1vmin;
 }
 
 .field-value {
-  font-size: clamp(1.5vmin, 3vmin, 20px);
+  font-size: 1.5vmin;
   color: #0d2a40;
   background: rgba(255,255,255,0.45);
   border: 0.2vmin solid #ffed4c;
@@ -498,22 +498,26 @@ p {
 .slider-viewport {
   overflow: hidden;
   width: 100%;
+
 }
- 
+
 .slider-track {
   display: flex;
   transition: transform 0.45s cubic-bezier(0.4, 0.2, 0.2, 1);
   will-change: transform;
 }
- 
+
 /* each card = one slide */
 .project-card {
+  display: flex;
   min-width: 100%;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  height: fit-content;
+  flex-shrink: 1;
+
   display: flex;
   flex-direction: column;
-  gap: 0.5vmin;
+  background-image: url(imagens/proj_background.png);
+  padding-bottom: 0;
 }
  
 /* ── TOP ROW: image + name/year ── */
@@ -524,16 +528,17 @@ p {
 }
  
 .proj-img-box {
-  width: 38%;
-  flex-shrink: 0;
+  margin: 1.7vmin 3vmin 1.7vmin 1.7vmin;
+  
+  height: 33vmin;
   background: rgba(255,255,255,0.7);
-  border: 0.35vmin solid #c8b040;
+  border: 2vmin solid #c8b040;
   border-radius: 1vmin;
-  overflow: hidden;
+  border-style: double;
+
   aspect-ratio: 4/3;
   display: flex;
-  align-items: center;
-  justify-content: center;
+ 
   font-size: clamp(20px, 5vmin, 60px);
 }
  
@@ -551,13 +556,22 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 33%;
   gap: 0.8vmin;
+}
+.proj-middle {
+  flex: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
  
 .proj-name {
-  font-size: clamp(6px, 1.1vmin, 15px);
-  color: #2a1a00;
+  font-size: clamp(2.5vmin, 1.1vmin, 15px);
+  color: #3b3b3b;
   line-height: 1.5;
+  padding: 3vmin 0vmin 3vmin 6vmin;
 }
  
 .proj-year {
@@ -565,22 +579,31 @@ p {
   color: #5a4010;
 }
  
+.proj-middle {
+  display: flex;
+  gap: 1vmin;
+  align-items: stretch;
+}
+
 /* ── BOTTOM ROW: blue desc bar + arrow buttons ── */
 .proj-bottom {
   display: flex;
   align-items: stretch;
-  gap: 0;
-  background: #5080d0;
+  gap: 1vmin;
+  background: #628eda;
   border-radius: 1vmin;
   overflow: hidden;
-  border: 0.3vmin solid #3060b0;
+  border: 1.8vmin solid #628eda;
+  padding: auto;
+  
 }
  
 .slider-btn {
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(8px, 1.6vmin, 20px);
-  background: #2050a8;
-  border: none;
+  background: #2f6bda;
+  border: 2px solid;
+  border-radius: 3vmin;
   color: #ffffff;
   padding: 0 1.2vmin;
   cursor: pointer;
@@ -598,7 +621,7 @@ p {
 .proj-desc-wrap {
   flex: 1;
   background: rgba(255,255,255,0.92);
-  padding: 0.8vmin 1.2vmin;
+  padding: 3.5vmin 3.5vmin;
   display: flex;
   flex-direction: column;
   gap: 0.4vmin;
@@ -606,10 +629,12 @@ p {
 }
  
 .proj-desc {
-  font-size: clamp(5px, 0.9vmin, 12px);
+  font-size: clamp(2vmin, 0.9vmin, 12px);
   color: #0d2a40;
   line-height: 1.7;
   font-family: sans-serif;
+  inline-size: 100%;
+  overflow-wrap: break-word;
 }
  
 .proj-footer {
@@ -622,7 +647,7 @@ p {
 .project-status {
   display: inline-flex;
   align-items: center;
-  font-size: clamp(4px, 0.7vmin, 9px);
+  font-size: clamp(1.2vmin, 0.7vmin, 9px);
   padding: 0.2vmin 0.6vmin;
   border-radius: 2vmin;
   font-family: sans-serif;
@@ -636,7 +661,7 @@ p {
  
 .download-hint {
   display: inline-block;
-  font-size: clamp(4px, 0.7vmin, 9px);
+  font-size: clamp(1.5vmin, 0.7vmin, 9px);
   font-family: sans-serif;
   color: #2050b0;
   text-decoration: underline;
