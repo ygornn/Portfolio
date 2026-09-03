@@ -251,7 +251,7 @@ p {
 }
 
 /* ── curiosidades list ── */
-#curiosidades { min-height: 8vmin; font-size: 1vmin;}
+#curiosidades { min-height: 8vmin; font-size: 2.5vmin;}
 
 .field-value ul {
   list-style: none;
@@ -410,7 +410,7 @@ p {
 .badge-col { display: flex; flex-direction: column; align-items: center; gap: 0.4vmin; }
 
 .badge {
-  width: 4vmin; height: 4vmin;
+  width: 8vmin; height: 8vmin;
   border-radius: 50%;
   border: 0.3vmin solid rgba(255,255,255,0.6);
   box-shadow: 0 0.2vmin 0.8vmin rgba(0,0,0,0.25);
@@ -431,7 +431,7 @@ p {
 .badge-8 { background: radial-gradient(circle at 35% 35%, #60e8ff, #0060c0); }
 
 .badge-label {
-  font-size: clamp(5px, 0.9vmin, 12px);
+  font-size: clamp(3vmin, 0.9vmin, 12px);
   color: #60501a;
   text-align: center;
 }
@@ -499,7 +499,7 @@ p {
 .slider-viewport {
   overflow: hidden;
   width: 100%;
-
+  gap: 1;
 }
 
 .slider-track {
@@ -517,8 +517,15 @@ p {
 
   display: flex;
   flex-direction: column;
-  background-image: url(imagens/proj_background.png);
   padding-bottom: 0;
+}
+
+#proj-1 {
+  background-image: url(imagens/background-proj1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
 }
  
 /* ── TOP ROW: image + name/year ── */
@@ -556,23 +563,33 @@ p {
 }
 
 .proj-meta {
+  
   background: rgba(255,248,200,0.75);
   border-radius: 1vmin;
-  padding: 0.8vmin 1vmin;
+  
   display: flex;
-  height: 33%;
+  justify-items: start;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+#pokeball-proj{
+  height: 3.8vmin;
+  width: 4vmin;
+
 }
 
 .proj-middle {
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  flex:2;
   flex-direction: column;
   font-size: clamp(4vmin, 1vmin, 13px);
   font-weight: bold;
   color: #494c4e;
 }
 
-.proj-date{
+.proj-center{
   display: flex;
   justify-content: end;
 }
@@ -583,6 +600,7 @@ p {
   line-height: 2;
   font-weight:900;
   padding: 3vmin 0vmin 3vmin 6vmin;
+
 }
  
 
