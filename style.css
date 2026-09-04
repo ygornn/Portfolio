@@ -518,15 +518,19 @@ p {
   display: flex;
   flex-direction: column;
   padding-bottom: 0;
-}
-
-#proj-1 {
-  background-image: url(imagens/background-proj1.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
 }
+
+#proj-1 {background-image: url(imagens/background-proj.png);}
+#proj-2 {background-image: url(imagens/background-proj2.png);}
+#proj-3 {background-image: url(imagens/background-proj3.png);}
+#proj-4 {background-image: url(imagens/background-proj4.png);}
+#proj-5 {background-image: url(imagens/background-proj5.png);}
+
  
 /* ── TOP ROW: image + name/year ── */
 .proj-top {
